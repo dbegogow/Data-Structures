@@ -2,8 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 
-using static ExceptionMessages.Messages;
-
 namespace ListImplementation
 {
     public class List<T> : IList<T>
@@ -19,7 +17,7 @@ namespace ListImplementation
         {
             if (capacity < 0)
             {
-                throw new ArgumentOutOfRangeException(CapacityOutOfRangeException);
+                throw new ArgumentOutOfRangeException();
             }
 
             this._items = new T[capacity];
@@ -29,7 +27,7 @@ namespace ListImplementation
         {
             if (collection == null)
             {
-                throw new ArgumentNullException(CollectionNullException);
+                throw new ArgumentNullException();
             }
 
             if (collection is ICollection<T> collectionAsICollection)
@@ -65,14 +63,28 @@ namespace ListImplementation
 
         public T this[int index]
         {
-            get => throw new System.NotImplementedException();
-            set => throw new System.NotImplementedException();
-        }
+            get
+            {
+                if (!this.IsValidIndex(index))
+                {
+                    throw new IndexOutOfRangeException();
+                }
 
+                return this._items[index];
+            }
+            set
+            {
+                if (!this.IsValidIndex(index))
+                {
+                    throw new IndexOutOfRangeException();
+                }
+
+                this._items[index] = value;
+            }
+        }
 
         public void Add(T item)
         {
-            throw new System.NotImplementedException();
         }
 
         public void Clear()
@@ -118,6 +130,16 @@ namespace ListImplementation
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        private bool IsValidIndex(int index)
+        {
+            if (index < 0 || index >= this.Count)
+            {
+                return false;
+            }
+
+            return true;
         }
     }
 }
