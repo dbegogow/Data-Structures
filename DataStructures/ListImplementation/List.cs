@@ -8,7 +8,7 @@ namespace ListImplementation
     {
         private const int DefaultCapacity = 4;
 
-        private readonly T[] _items;
+        private T[] _items;
 
         public List()
             => this._items = new T[DefaultCapacity];
@@ -41,11 +41,14 @@ namespace ListImplementation
                 else
                 {
                     this._items = new T[count];
+                    this.Count = count;
                     collectionAsICollection.CopyTo(this._items, 0);
                 }
             }
             else
             {
+                this.Count = 0;
+
                 using IEnumerator<T> collectionEnumerator = collection.GetEnumerator();
 
                 while (collectionEnumerator.MoveNext())
@@ -55,8 +58,7 @@ namespace ListImplementation
             }
         }
 
-        public int Count
-            => this._items.Length;
+        public int Count { get; private set; }
 
         public bool IsReadOnly
             => false;
@@ -85,6 +87,16 @@ namespace ListImplementation
 
         public void Add(T item)
         {
+            if (this._items.Length == this.Count)
+            {
+                var newItemsArr = new T[this.Count * 2];
+                this._items.CopyTo(newItemsArr, 0);
+                this._items = newItemsArr;
+            }
+
+            this._items[this.Count] = item;
+
+            this.Count++;
         }
 
         public void Clear()
