@@ -1,5 +1,4 @@
 ﻿using System;
-using ListImplementation;
 
 namespace DataStructures
 {
@@ -7,17 +6,6 @@ namespace DataStructures
     {
         public static void Main()
         {
-            var list = new List<int>
-            {
-                1,
-                2,
-                3,
-                4,
-                5
-            };
-
-
-            Console.WriteLine(list.Count);
         }
     }
 }

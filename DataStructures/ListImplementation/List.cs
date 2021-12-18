@@ -89,14 +89,20 @@ namespace ListImplementation
         {
             if (this._items.Length == this.Count)
             {
-                var newItemsArr = new T[this.Count * 2];
-                this._items.CopyTo(newItemsArr, 0);
-                this._items = newItemsArr;
+                this.ResizeItemsArr();
             }
 
             this._items[this.Count] = item;
 
             this.Count++;
+        }
+
+        public void Insert(int index, T item)
+        {
+            if (this._items.Length == this.Count)
+            {
+                this.ResizeItemsArr();
+            }
         }
 
         public void Clear()
@@ -124,11 +130,6 @@ namespace ListImplementation
             throw new System.NotImplementedException();
         }
 
-        public void Insert(int index, T item)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void RemoveAt(int index)
         {
             throw new System.NotImplementedException();
@@ -152,6 +153,13 @@ namespace ListImplementation
             }
 
             return true;
+        }
+
+        private void ResizeItemsArr()
+        {
+            var newItemsArr = new T[this.Count * 2];
+            this._items.CopyTo(newItemsArr, 0);
+            this._items = newItemsArr;
         }
     }
 }
