@@ -85,6 +85,31 @@ namespace ListImplementation
             }
         }
 
+        public bool Contains(T item)
+        {
+            if (item == null)
+            {
+                return false;
+            }
+
+            for (int i = 0; i < this.Count; i++)
+            {
+                var currentItem = this._items[i];
+
+                if (currentItem.Equals(item))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        public int IndexOf(T item)
+        {
+            throw new System.NotImplementedException();
+        }
+
         public void Add(T item)
         {
             if (this._items.Length == this.Count)
@@ -99,18 +124,27 @@ namespace ListImplementation
 
         public void Insert(int index, T item)
         {
+            if (!this.IsValidIndex(index))
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             if (this._items.Length == this.Count)
             {
                 this.ResizeItemsArr();
             }
+
+            for (int i = this.Count; i > index; i--)
+            {
+                var currentItem = this._items[i - 1];
+
+                this._items[i] = currentItem;
+            }
+
+            this._items[index] = item;
         }
 
         public void Clear()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool Contains(T item)
         {
             throw new System.NotImplementedException();
         }
@@ -121,11 +155,6 @@ namespace ListImplementation
         }
 
         public bool Remove(T item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public int IndexOf(T item)
         {
             throw new System.NotImplementedException();
         }
