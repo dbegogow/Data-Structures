@@ -7,9 +7,9 @@ namespace DataStructures
     {
         public static void Main()
         {
-            var list = new List<string> { "1", "2", "3" };
+            var list = new List<int> { 1, 2, 3 };
 
-            Console.WriteLine(list.Contains(null));
+            Console.WriteLine(list.IndexOf(0));
         }
     }
 }

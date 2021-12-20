@@ -107,7 +107,17 @@ namespace ListImplementation
 
         public int IndexOf(T item)
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i < this.Count; i++)
+            {
+                var currentItem = this._items[i];
+
+                if (currentItem.Equals(item))
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
 
         public void Add(T item)
