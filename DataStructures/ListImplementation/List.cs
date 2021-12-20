@@ -190,7 +190,7 @@ namespace ListImplementation
 
         public void CopyTo(T[] array, int arrayIndex)
         {
-            throw new System.NotImplementedException();
+            Array.Copy(this._items, array, this.Count);
         }
 
         public IEnumerator<T> GetEnumerator()
