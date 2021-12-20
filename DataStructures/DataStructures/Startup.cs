@@ -9,7 +9,8 @@ namespace DataStructures
         {
             var list = new List<int> { 1, 2, 3 };
 
-            Console.WriteLine(list.IndexOf(0));
+            Console.WriteLine(list.Remove(3));
+            ;
         }
     }
 }

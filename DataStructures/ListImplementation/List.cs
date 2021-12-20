@@ -146,12 +146,40 @@ namespace ListImplementation
 
             for (int i = this.Count; i > index; i--)
             {
-                var currentItem = this._items[i - 1];
-
-                this._items[i] = currentItem;
+                this._items[i] = this._items[i - 1];
             }
 
             this._items[index] = item;
+            this.Count++;
+        }
+
+        public bool Remove(T item)
+        {
+            var index = this.IndexOf(item);
+
+            if (index == -1)
+            {
+                return false;
+            }
+
+            this.RemoveAt(index);
+
+            return true;
+        }
+
+        public void RemoveAt(int index)
+        {
+            if (!this.IsValidIndex(index))
+            {
+                throw new IndexOutOfRangeException();
+            }
+
+            for (int i = index; i < this.Count - 1; i++)
+            {
+                this._items[i] = this._items[i + 1];
+            }
+
+            this.Count--;
         }
 
         public void Clear()
@@ -160,16 +188,6 @@ namespace ListImplementation
         }
 
         public void CopyTo(T[] array, int arrayIndex)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool Remove(T item)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void RemoveAt(int index)
         {
             throw new System.NotImplementedException();
         }
