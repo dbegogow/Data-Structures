@@ -184,7 +184,8 @@ namespace ListImplementation
 
         public void Clear()
         {
-            throw new System.NotImplementedException();
+            this._items = new T[DefaultCapacity];
+            this.Count = 0;
         }
 
         public void CopyTo(T[] array, int arrayIndex)
