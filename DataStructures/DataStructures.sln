@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures", "DataStruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListImplementation", "ListImplementation\ListImplementation.csproj", "{39F544EB-7485-4F5A-A6E6-EECCD3098215}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedListImplementation", "LinkedListImplementation\LinkedListImplementation.csproj", "{52649087-446F-4AD5-AC3E-744191067230}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{39F544EB-7485-4F5A-A6E6-EECCD3098215}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39F544EB-7485-4F5A-A6E6-EECCD3098215}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39F544EB-7485-4F5A-A6E6-EECCD3098215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52649087-446F-4AD5-AC3E-744191067230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52649087-446F-4AD5-AC3E-744191067230}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52649087-446F-4AD5-AC3E-744191067230}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52649087-446F-4AD5-AC3E-744191067230}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
