@@ -14,9 +14,10 @@ namespace DataStructures
             list.AddLast(3);
             list.AddLast(4);
 
-            list.Remove(3);
-
-            ;
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }

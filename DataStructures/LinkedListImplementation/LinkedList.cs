@@ -162,7 +162,21 @@ namespace LinkedListImplementation
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new System.NotImplementedException();
+            var currentNode = this._head;
+
+            yield return currentNode.Value;
+
+            while (true)
+            {
+                currentNode = currentNode.Next;
+
+                if (currentNode == null)
+                {
+                    break;
+                }
+
+                yield return currentNode.Value;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
@@ -178,30 +192,28 @@ namespace LinkedListImplementation
 
         private Node<T> FindNode(T value)
         {
-            var headNodeValue = this._head.Value;
+            var currentNode = this._head;
 
-            if (value.Equals(headNodeValue))
+            if (value.Equals(currentNode.Value))
             {
                 return this._head;
             }
 
-            var nextNode = this._head.Next;
-
             while (true)
             {
-                if (nextNode == null)
+                currentNode = currentNode.Next;
+
+                if (currentNode == null)
                 {
                     return null;
                 }
 
-                var currentNodeValue = nextNode.Value;
+                var currentNodeValue = currentNode.Value;
 
                 if (currentNodeValue.Equals(value))
                 {
-                    return nextNode;
+                    return currentNode;
                 }
-
-                nextNode = nextNode.Next;
             }
         }
     }
