@@ -10,11 +10,11 @@ namespace LinkedListImplementation
 
         void AddLast(T item);
 
-        void AddAfter(T item, T newItem);
-
-        void AddBefore(T item, T newItem);
-
         void Clear();
+
+        bool AddAfter(T item, T newItem);
+
+        bool AddBefore(T item, T newItem);
 
         bool Contains(T item);
 

@@ -43,18 +43,33 @@ namespace LinkedListImplementation
 
             this.Count++;
         }
-
-        public void AddAfter(T item, T newItem)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void AddBefore(T item, T newItem)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void Clear()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public bool AddAfter(T item, T newItem)
+        {
+            var node = this.FindNode(item);
+
+            if (node == null)
+            {
+                return false;
+            }
+
+            var nextNode = node.Next;
+            var newNode = new Node<T>(newItem);
+
+            node.Next = newNode;
+            newNode.Previous = node;
+
+            newNode.Next = nextNode;
+            nextNode.Previous = newNode;
+
+            return true;
+        }
+
+        public bool AddBefore(T item, T newItem)
         {
             throw new System.NotImplementedException();
         }
@@ -83,6 +98,33 @@ namespace LinkedListImplementation
         {
             this._head = newNode;
             this._tail = newNode;
+        }
+
+        private Node<T> FindNode(T value)
+        {
+            var headNodeValue = this._head.Value;
+
+            if (value.Equals(headNodeValue))
+            {
+                return this._head;
+            }
+
+            while (true)
+            {
+                var currentNode = this._head.Next;
+
+                if (currentNode == null)
+                {
+                    return null;
+                }
+
+                var currentNodeValue = currentNode.Value;
+
+                if (currentNodeValue.Equals(value))
+                {
+                    return currentNode;
+                }
+            }
         }
     }
 }
