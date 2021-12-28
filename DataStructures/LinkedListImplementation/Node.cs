@@ -2,14 +2,13 @@
 {
     public class Node<T>
     {
-        public Node(T value, Node<T> next)
-        {
-            this.Value = value;
-            this.Next = next;
-        }
+        public Node(T value)
+            => this.Value = value;
 
         public T Value { get; }
 
-        public Node<T> Next { get; }
+        public Node<T> Next { get; set; }
+
+        public Node<T> Previous { get; set; }
     }
 }

@@ -5,17 +5,38 @@ namespace LinkedListImplementation
 {
     public class LinkedList<T> : ILinkedList<T>
     {
+        private Node<T> _head;
+        private Node<T> _tail;
 
-        public int Count { get; }
+        public int Count { get; private set; }
 
         public void AddFirst(T item)
         {
-            throw new System.NotImplementedException();
+            var newNode = new Node<T>(item);
+
+            if (this._head == null)
+            {
+                this.AddFirstItem(newNode);
+                return;
+            }
+
+            newNode.Next = this._head;
+            this._head = newNode;
+
+            this.Count++;
         }
 
         public void AddLast(T item)
         {
-            throw new System.NotImplementedException();
+            var newNode = new Node<T>(item);
+
+            if (this._tail == null)
+            {
+                this.AddFirstItem(newNode);
+                return;
+            }
+
+            new
         }
 
         public void AddAfter(T item, T newItem)
@@ -51,6 +72,12 @@ namespace LinkedListImplementation
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        private void AddFirstItem(Node<T> newNode)
+        {
+            this._head = newNode;
+            this._tail = newNode;
         }
     }
 }
