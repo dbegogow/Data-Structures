@@ -67,6 +67,12 @@ namespace LinkedListImplementation
             var nextNode = node.Next;
             var newNode = new Node<T>(newItem);
 
+            if (nextNode == null)
+            {
+                this.AddLast(newItem);
+                return true;
+            }
+
             node.Next = newNode;
             newNode.Previous = node;
 
@@ -89,6 +95,12 @@ namespace LinkedListImplementation
 
             var previousNode = node.Previous;
             var newNode = new Node<T>(newItem);
+
+            if (previousNode == null)
+            {
+                this.AddFirst(newItem);
+                return true;
+            }
 
             node.Previous = newNode;
             newNode.Next = node;
