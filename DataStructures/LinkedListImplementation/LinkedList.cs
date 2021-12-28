@@ -71,7 +71,23 @@ namespace LinkedListImplementation
 
         public bool AddBefore(T item, T newItem)
         {
-            throw new System.NotImplementedException();
+            var node = this.FindNode(item);
+
+            if (node == null)
+            {
+                return false;
+            }
+
+            var previousNode = node.Previous;
+            var newNode = new Node<T>(newItem);
+
+            node.Previous = newNode;
+            newNode.Next = node;
+
+            newNode.Previous = previousNode;
+            previousNode.Next = newNode;
+
+            return true;
         }
 
         public bool Contains(T item)
