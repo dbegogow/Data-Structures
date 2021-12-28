@@ -106,7 +106,22 @@ namespace LinkedListImplementation
 
         public bool Remove(T item)
         {
-            throw new System.NotImplementedException();
+            var node = this.FindNode(item);
+
+            if (node == null)
+            {
+                return false;
+            }
+
+            var nextNode = node.Next;
+            var previousNode = node.Previous;
+
+            nextNode.Previous = previousNode;
+            previousNode.Next = nextNode;
+
+            this.Count--;
+
+            return true;
         }
 
         public IEnumerator<T> GetEnumerator()
