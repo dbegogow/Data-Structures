@@ -49,7 +49,10 @@ namespace LinkedListImplementation
         }
         public void Clear()
         {
-            throw new System.NotImplementedException();
+            this._head = null;
+            this._tail = null;
+
+            this.Count = 0;
         }
 
         public bool AddAfter(T item, T newItem)
