@@ -195,7 +195,11 @@ namespace ListImplementation
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new System.NotImplementedException();
+            for (int i = 0; i < this.Count; i++)
+            {
+                var currentItem = this._items[i];
+                yield return currentItem;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
