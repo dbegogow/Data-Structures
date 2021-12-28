@@ -36,7 +36,10 @@ namespace LinkedListImplementation
                 return;
             }
 
-            new
+            newNode.Previous = this._tail;
+            this._tail = newNode;
+
+            this.Count++;
         }
 
         public void AddAfter(T item, T newItem)
