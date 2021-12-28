@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+﻿using LinkedListImplementation;
 
 namespace DataStructures
 {
@@ -8,7 +8,11 @@ namespace DataStructures
         {
             var list = new LinkedList<int>();
 
-            list
+            list.AddFirst(1);
+            list.AddFirst(0);
+            list.AddFirst(-1);
+            list.AddLast(2);
+            list.AddLast(3);
         }
     }
 }

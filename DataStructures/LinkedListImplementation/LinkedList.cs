@@ -20,6 +20,7 @@ namespace LinkedListImplementation
                 return;
             }
 
+            this._head.Previous = newNode;
             newNode.Next = this._head;
             this._head = newNode;
 
@@ -36,6 +37,7 @@ namespace LinkedListImplementation
                 return;
             }
 
+            this._tail.Next = newNode;
             newNode.Previous = this._tail;
             this._tail = newNode;
 
