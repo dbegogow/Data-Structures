@@ -99,9 +99,7 @@ namespace LinkedListImplementation
         }
 
         public bool Contains(T item)
-        {
-            throw new System.NotImplementedException();
-        }
+            => this.FindNode(item) != null;
 
         public bool Remove(T item)
         {

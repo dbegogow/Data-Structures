@@ -1,4 +1,5 @@
-﻿using LinkedListImplementation;
+﻿using System;
+using LinkedListImplementation;
 
 namespace DataStructures
 {
@@ -14,9 +15,7 @@ namespace DataStructures
             list.AddLast(2);
             list.AddLast(3);
 
-            list.AddAfter(2, 10);
-
-            ;
+            Console.WriteLine(list.Contains(4));
         }
     }
 }
