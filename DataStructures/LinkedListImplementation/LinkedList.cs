@@ -17,6 +17,8 @@ namespace LinkedListImplementation
             if (this._head == null)
             {
                 this.AddFirstItem(newNode);
+                this.Count++;
+
                 return;
             }
 
@@ -34,6 +36,8 @@ namespace LinkedListImplementation
             if (this._tail == null)
             {
                 this.AddFirstItem(newNode);
+                this.Count++;
+
                 return;
             }
 
@@ -66,6 +70,8 @@ namespace LinkedListImplementation
             newNode.Next = nextNode;
             nextNode.Previous = newNode;
 
+            this.Count++;
+
             return true;
         }
 
@@ -86,6 +92,8 @@ namespace LinkedListImplementation
 
             newNode.Previous = previousNode;
             previousNode.Next = newNode;
+
+            this.Count++;
 
             return true;
         }
