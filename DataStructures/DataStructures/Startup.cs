@@ -8,7 +8,7 @@ namespace DataStructures
         {
             var list = new LinkedList<int>();
 
-            list.
+            list
         }
     }
 }

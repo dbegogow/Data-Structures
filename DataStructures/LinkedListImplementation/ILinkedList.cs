@@ -2,8 +2,10 @@
 
 namespace LinkedListImplementation
 {
-    public interface ILinkedList<T> : ICollection<T>
+    public interface ILinkedList<T> : IEnumerable<T>
     {
+        int Count { get; }
+
         void AddFirst(T item);
 
         void AddLast(T item);
@@ -11,5 +13,11 @@ namespace LinkedListImplementation
         void AddAfter(T item, T newItem);
 
         void AddBefore(T item, T newItem);
+
+        void Clear();
+
+        bool Contains(T item);
+
+        bool Remove(T item);
     }
 }
