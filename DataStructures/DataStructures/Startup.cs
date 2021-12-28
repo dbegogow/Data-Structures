@@ -9,12 +9,14 @@ namespace DataStructures
         {
             var list = new LinkedList<int>();
 
-           list.AddFirst(1);
-           list.AddFirst(0);
+            list.AddFirst(1);
+            list.AddLast(2);
+            list.AddLast(3);
+            list.AddLast(4);
 
-           list.AddBefore(0, -1);
+            list.Remove(3);
 
-           ;
+            ;
         }
     }
 }

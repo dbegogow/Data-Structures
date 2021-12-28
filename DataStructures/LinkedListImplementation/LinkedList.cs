@@ -64,6 +64,8 @@ namespace LinkedListImplementation
                 return false;
             }
 
+            this.Count++;
+
             var nextNode = node.Next;
             var newNode = new Node<T>(newItem);
 
@@ -79,8 +81,6 @@ namespace LinkedListImplementation
             newNode.Next = nextNode;
             nextNode.Previous = newNode;
 
-            this.Count++;
-
             return true;
         }
 
@@ -92,6 +92,8 @@ namespace LinkedListImplementation
             {
                 return false;
             }
+
+            this.Count++;
 
             var previousNode = node.Previous;
             var newNode = new Node<T>(newItem);
@@ -108,8 +110,6 @@ namespace LinkedListImplementation
             newNode.Previous = previousNode;
             previousNode.Next = newNode;
 
-            this.Count++;
-
             return true;
         }
 
@@ -125,13 +125,37 @@ namespace LinkedListImplementation
                 return false;
             }
 
+            this.Count--;
+
             var nextNode = node.Next;
             var previousNode = node.Previous;
 
-            nextNode.Previous = previousNode;
-            previousNode.Next = nextNode;
+            if (this.Count == 0)
+            {
+                this.Clear();
+            }
+            else
+            {
+                if (nextNode == null)
+                {
+                    previousNode.Next = null;
+                    this._tail = previousNode;
+                }
+                else
+                {
+                    nextNode.Previous = previousNode;
+                }
 
-            this.Count--;
+                if (previousNode == null)
+                {
+                    nextNode.Previous = null;
+                    this._head = nextNode;
+                }
+                else
+                {
+                    previousNode.Next = nextNode;
+                }
+            }
 
             return true;
         }
