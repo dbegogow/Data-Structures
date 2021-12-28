@@ -125,21 +125,23 @@ namespace LinkedListImplementation
                 return this._head;
             }
 
+            var nextNode = this._head.Next;
+
             while (true)
             {
-                var currentNode = this._head.Next;
-
-                if (currentNode == null)
+                if (nextNode == null)
                 {
                     return null;
                 }
 
-                var currentNodeValue = currentNode.Value;
+                var currentNodeValue = nextNode.Value;
 
                 if (currentNodeValue.Equals(value))
                 {
-                    return currentNode;
+                    return nextNode;
                 }
+
+                nextNode = nextNode.Next;
             }
         }
     }

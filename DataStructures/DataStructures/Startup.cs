@@ -13,6 +13,10 @@ namespace DataStructures
             list.AddFirst(-1);
             list.AddLast(2);
             list.AddLast(3);
+
+            list.AddAfter(2, 10);
+
+            ;
         }
     }
 }
