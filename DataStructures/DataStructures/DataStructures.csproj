@@ -8,6 +8,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LinkedListImplementation\LinkedListImplementation.csproj" />
     <ProjectReference Include="..\ListImplementation\ListImplementation.csproj" />
+    <ProjectReference Include="..\StackImplementation\StackImplementation.csproj" />
   </ItemGroup>
 
 </Project>
