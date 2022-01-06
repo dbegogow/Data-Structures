@@ -2,8 +2,11 @@
 {
     public class Node<T>
     {
-        public Node(T value)
-            => this.Value = value;
+        public Node(T value, Node<T> next)
+        {
+            this.Value = value;
+            this.Next = next;
+        }
 
         public T Value { get; }
 

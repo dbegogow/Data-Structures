@@ -1,5 +1,5 @@
 ﻿using System;
-using LinkedListImplementation;
+using StackImplementation;
 
 namespace DataStructures
 {
@@ -7,17 +7,12 @@ namespace DataStructures
     {
         public static void Main()
         {
-            var list = new LinkedList<int>();
+            var stack = new Stack<int>();
 
-            list.AddFirst(1);
-            list.AddLast(2);
-            list.AddLast(3);
-            list.AddLast(4);
+            stack.Push(1);
+            stack.Push(2);
 
-            foreach (var item in list)
-            {
-                Console.WriteLine(item);
-            }
+            ;
         }
     }
 }

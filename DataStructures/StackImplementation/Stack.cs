@@ -5,11 +5,19 @@ namespace StackImplementation
 {
     public class Stack<T> : IStack<T>
     {
-        public int Count { get; }
+        private Node<T> _top;
+
+        public int Count { get; private set; }
+
+        public bool Contains(T item)
+        {
+            throw new System.NotImplementedException();
+        }
 
         public void Push(T item)
         {
-            throw new System.NotImplementedException();
+            var newItem = new Node<T>(item, _top);
+            this._top = newItem;
         }
 
         public T Pop()
@@ -18,11 +26,6 @@ namespace StackImplementation
         }
 
         public T Peek()
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public bool Contains(T item)
         {
             throw new System.NotImplementedException();
         }
