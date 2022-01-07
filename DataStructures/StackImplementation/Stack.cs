@@ -11,7 +11,19 @@ namespace StackImplementation
 
         public bool Contains(T item)
         {
-            throw new System.NotImplementedException();
+            var currentNode = this._top;
+
+            while (currentNode != null)
+            {
+                if (currentNode.Value.Equals(item))
+                {
+                    return true;
+                }
+
+                currentNode = currentNode.Next;
+            }
+
+            return false;
         }
 
         public void Push(T item)

@@ -12,7 +12,7 @@ namespace DataStructures
             stack.Push(1);
             stack.Push(2);
 
-            ;
+            Console.WriteLine(stack.Contains(3));
         }
     }
 }
