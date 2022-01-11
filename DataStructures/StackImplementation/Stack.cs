@@ -30,14 +30,18 @@ namespace StackImplementation
         {
             var newItem = new Node<T>(item, _top);
             this._top = newItem;
+
+            this.Count++;
         }
 
         public T Pop()
         {
-            var topItemValue = this._top.Value;
+            var removedItem = this._top.Value;
             this._top = _top.Next;
 
-            return topItemValue;
+            this.Count--;
+
+            return removedItem;
         }
 
         public T Peek()
