@@ -12,7 +12,21 @@ namespace QueueImplementation
 
         public bool Contains(T item)
         {
-            throw new System.NotImplementedException();
+            var currentNode = this._head;
+
+            while (currentNode != null)
+            {
+                var currentItem = currentNode.Value;
+
+                if (currentItem.Equals(item))
+                {
+                    return true;
+                }
+
+                currentNode = currentNode.Next;
+            }
+
+            return false;
         }
 
         public void Enqueue(T item)
