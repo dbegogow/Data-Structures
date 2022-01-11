@@ -40,7 +40,15 @@ namespace QueueImplementation
 
         public T Dequeue()
         {
-            throw new System.NotImplementedException();
+            this.ValidateEmptyQueue();
+
+            var removedItem = this._head.Value;
+            this._head = this._head.Next;
+
+
+            this.Count--;
+
+            return removedItem;
         }
 
         public T Peek()
@@ -58,7 +66,7 @@ namespace QueueImplementation
             return GetEnumerator();
         }
 
-        private void ValidateEmptyStack()
+        private void ValidateEmptyQueue()
         {
             if (this._head == null)
             {
