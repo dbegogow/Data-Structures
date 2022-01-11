@@ -56,7 +56,14 @@ namespace StackImplementation
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new System.NotImplementedException();
+            var currentNode = this._top;
+
+            while (currentNode != null)
+            {
+                yield return currentNode.Value;
+
+                currentNode = currentNode.Next;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()
