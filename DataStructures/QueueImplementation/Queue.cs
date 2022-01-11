@@ -60,7 +60,14 @@ namespace QueueImplementation
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new System.NotImplementedException();
+            var currentNode = this._head;
+
+            while (currentNode != null)
+            {
+                yield return currentNode.Value;
+
+                currentNode = currentNode.Next;
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()

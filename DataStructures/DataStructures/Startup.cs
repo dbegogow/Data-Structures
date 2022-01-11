@@ -27,7 +27,11 @@ namespace DataStructures
             Console.WriteLine(queue.Dequeue());
             Console.WriteLine(queue.Dequeue());
 
-            ;
+            Console.WriteLine(queue.Peek());
+
+            Console.WriteLine("----");
+
+            Console.WriteLine(string.Join(", ", queue));
         }
     }
 }
