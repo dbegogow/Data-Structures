@@ -53,7 +53,9 @@ namespace QueueImplementation
 
         public T Peek()
         {
-            throw new System.NotImplementedException();
+            this.ValidateEmptyQueue();
+
+            return this._head.Value;
         }
 
         public IEnumerator<T> GetEnumerator()
