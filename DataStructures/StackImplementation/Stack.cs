@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace StackImplementation
@@ -36,6 +37,8 @@ namespace StackImplementation
 
         public T Pop()
         {
+            this.ValidateEmptyStack();
+
             var removedItem = this._top.Value;
             this._top = _top.Next;
 
@@ -46,7 +49,9 @@ namespace StackImplementation
 
         public T Peek()
         {
-            throw new System.NotImplementedException();
+            this.ValidateEmptyStack();
+
+            return this._top.Value;
         }
 
         public IEnumerator<T> GetEnumerator()
@@ -57,6 +62,14 @@ namespace StackImplementation
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+
+        private void ValidateEmptyStack()
+        {
+            if (this._top == null)
+            {
+                throw new InvalidOperationException("Stack is empty");
+            }
         }
     }
 }
