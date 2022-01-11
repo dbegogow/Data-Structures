@@ -34,7 +34,10 @@ namespace StackImplementation
 
         public T Pop()
         {
-            throw new System.NotImplementedException();
+            var topItemValue = this._top.Value;
+            this._top = _top.Next;
+
+            return topItemValue;
         }
 
         public T Peek()
