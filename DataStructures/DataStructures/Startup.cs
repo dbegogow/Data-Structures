@@ -1,5 +1,5 @@
 ﻿using System;
-using StackImplementation;
+using System.Collections.Generic;
 
 namespace DataStructures
 {
@@ -7,14 +7,15 @@ namespace DataStructures
     {
         public static void Main()
         {
-            var stack = new Stack<int>();
+            var queue = new Queue<int>();
 
-            stack.Push(1);
-            stack.Push(2);
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
 
-            Console.WriteLine(stack.Pop());
+            queue.Dequeue();
 
-            ;
+            queue.
         }
     }
 }
