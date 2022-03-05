@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TreeImplementation
 {
@@ -59,19 +60,11 @@ namespace TreeImplementation
             return result;
         }
 
-        private void Dfs(Tree<T> subtree, List<T> result)
-        {
-            foreach (var child in subtree.Children)
-            {
-                this.Dfs(child, result);
-            }
-
-            result.Add(subtree.Value);
-        }
-
         public void AddChild(T parentKey, Tree<T> child)
         {
-            throw new System.NotImplementedException();
+            var parentSubtree = this.FindBfs(parentKey);
+            this.CheckEmptyNode(parentSubtree);
+            parentSubtree._children.Add(child);
         }
 
         public void RemoveNode(T nodeKey)
@@ -82,6 +75,48 @@ namespace TreeImplementation
         public void Swap(T firstKey, T secondKey)
         {
             throw new System.NotImplementedException();
+        }
+
+        private void Dfs(Tree<T> subtree, List<T> result)
+        {
+            foreach (var child in subtree.Children)
+            {
+                this.Dfs(child, result);
+            }
+
+            result.Add(subtree.Value);
+        }
+
+        private Tree<T> FindBfs(T value)
+        {
+            var queue = new Queue<Tree<T>>();
+
+            queue.Enqueue(this);
+
+            while (queue.Count > 0)
+            {
+                var subtree = queue.Dequeue();
+
+                if (subtree.Value.Equals(value))
+                {
+                    return subtree;
+                }
+
+                foreach (var child in subtree.Children)
+                {
+                    queue.Enqueue(child);
+                }
+            }
+
+            return null;
+        }
+
+        private void CheckEmptyNode(Tree<T> parentSubtree)
+        {
+            if (parentSubtree == null)
+            {
+                throw new ArgumentNullException();
+            }
         }
     }
 }
