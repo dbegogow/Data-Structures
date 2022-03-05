@@ -53,7 +53,20 @@ namespace TreeImplementation
 
         public ICollection<T> OrderDfs()
         {
-            throw new System.NotImplementedException();
+            var result = new List<T>();
+
+            this.Dfs(this, result);
+            return result;
+        }
+
+        private void Dfs(Tree<T> subtree, List<T> result)
+        {
+            foreach (var child in subtree.Children)
+            {
+                this.Dfs(child, result);
+            }
+
+            result.Add(subtree.Value);
         }
 
         public void AddChild(T parentKey, Tree<T> child)

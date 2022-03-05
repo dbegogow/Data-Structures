@@ -26,7 +26,7 @@ namespace DataStructures
                     )
             );
 
-            var elements = tree.OrderBfs();
+            var elements = tree.OrderDfs();
 
             ;
         }
