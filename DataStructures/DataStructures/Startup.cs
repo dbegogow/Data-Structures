@@ -1,5 +1,4 @@
-﻿using System;
-using QueueImplementation;
+﻿using TreeImplementation;
 
 namespace DataStructures
 {
@@ -7,31 +6,29 @@ namespace DataStructures
     {
         public static void Main()
         {
-            //var queue = new Queue<int>();
+            var tree = new Tree<int>(
+                1,
+                new Tree<int>(
+                                    2,
+                                    new Tree<int>(
+                                        10,
+                                        new Tree<int>(4),
+                                        new Tree<int>(7)),
+                                    new Tree<int>(
+                                        20,
+                                        new Tree<int>(5),
+                                        new Tree<int>(9))
+                                    ),
+                new Tree<int>(
+                    3,
+                    new Tree<int>(60),
+                    new Tree<int>(80)
+                    )
+            );
 
-            //queue.Enqueue(1);
-            //queue.Enqueue(2);
-            //queue.Enqueue(3);
+            var elements = tree.OrderBfs();
 
-            //queue.Dequeue();
-
-            //queue.
-
-            var queue = new Queue<int>();
-
-            queue.Enqueue(1);
-            queue.Enqueue(2);
-            queue.Enqueue(3);
-            queue.Enqueue(4);
-
-            Console.WriteLine(queue.Dequeue());
-            Console.WriteLine(queue.Dequeue());
-
-            Console.WriteLine(queue.Peek());
-
-            Console.WriteLine("----");
-
-            Console.WriteLine(string.Join(", ", queue));
+            ;
         }
     }
 }

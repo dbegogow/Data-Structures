@@ -10,6 +10,7 @@
     <ProjectReference Include="..\ListImplementation\ListImplementation.csproj" />
     <ProjectReference Include="..\QueueImplementation\QueueImplementation.csproj" />
     <ProjectReference Include="..\StackImplementation\StackImplementation.csproj" />
+    <ProjectReference Include="..\TreeImplementation\TreeImplementation.csproj" />
   </ItemGroup>
 
 </Project>

@@ -32,7 +32,23 @@ namespace TreeImplementation
 
         public ICollection<T> OrderBfs()
         {
-            throw new System.NotImplementedException();
+            var result = new List<T>();
+            var queue = new Queue<Tree<T>>();
+
+            queue.Enqueue(this);
+
+            while (queue.Count > 0)
+            {
+                var subtree = queue.Dequeue();
+                result.Add(subtree.Value);
+
+                foreach (var child in subtree.Children)
+                {
+                    queue.Enqueue(child);
+                }
+            }
+
+            return result;
         }
 
         public ICollection<T> OrderDfs()
