@@ -26,7 +26,7 @@ namespace DataStructures
                     )
             );
 
-            var elements = tree.OrderDfs();
+            tree.AddChild(20, new Tree<int>(90));
 
             ;
         }

@@ -111,6 +111,26 @@ namespace TreeImplementation
             return null;
         }
 
+        private Tree<T> FindDfs(T value, Tree<T> subtree)
+        {
+            foreach (var child in subtree.Children)
+            {
+                var current = this.FindDfs(value, child);
+
+                if (current != null && current.Value.Equals(value))
+                {
+                    return current;
+                }
+            }
+
+            if (subtree.Value.Equals(value))
+            {
+                return subtree;
+            }
+
+            return null;
+        }
+
         private void CheckEmptyNode(Tree<T> parentSubtree)
         {
             if (parentSubtree == null)
