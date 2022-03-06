@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace TreeImplementation
@@ -87,7 +88,23 @@ namespace TreeImplementation
 
         public void Swap(T firstKey, T secondKey)
         {
-            throw new System.NotImplementedException();
+            var firstNode = this.FindBfs(firstKey);
+            var secondNode = this.FindBfs(secondKey);
+
+            if (firstNode == null || secondNode == null)
+            {
+                throw new ArgumentException();
+            }
+
+            var firstNodeParent = firstNode.Parent;
+            var firstNodeChildren = firstNode.Children.ToList();
+
+            var secondNodeParent = secondNode.Parent;
+            var secondNodeChildren = secondNode.Children.ToList();
+
+
+            ChangeNode(secondKey, firstNode, secondNodeParent, secondNodeChildren);
+            ChangeNode(firstKey, secondNode, firstNodeParent, firstNodeChildren);
         }
 
         private void Dfs(Tree<T> subtree, List<T> result)
@@ -142,6 +159,18 @@ namespace TreeImplementation
             }
 
             return null;
+        }
+
+        private static void ChangeNode(T secondKey, Tree<T> firstNode, Tree<T> secondNodeParent, List<Tree<T>> secondNodeChildren)
+        {
+            firstNode.Value = secondKey;
+            firstNode.Parent = secondNodeParent;
+            firstNode._children.Clear();
+
+            foreach (var child in secondNodeChildren)
+            {
+                firstNode._children.Add(child);
+            }
         }
 
         private void CheckEmptyNode(Tree<T> parentSubtree)
