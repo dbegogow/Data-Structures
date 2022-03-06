@@ -24,7 +24,7 @@ namespace TreeImplementation
             }
         }
 
-        public T Value { get; }
+        public T Value { get; private set; }
 
         public Tree<T> Parent { get; private set; }
 
@@ -69,7 +69,20 @@ namespace TreeImplementation
 
         public void RemoveNode(T nodeKey)
         {
-            throw new System.NotImplementedException();
+            var removedNode = this.FindBfs(nodeKey);
+            this.CheckEmptyNode(removedNode);
+
+            var parentRemovedNode = removedNode.Parent;
+
+            if (parentRemovedNode == null)
+            {
+                this.Value = default;
+                this._children.Clear();
+                return;
+            }
+
+            var parentRemovedNodeChildren = parentRemovedNode._children;
+            parentRemovedNodeChildren.Remove(removedNode);
         }
 
         public void Swap(T firstKey, T secondKey)
