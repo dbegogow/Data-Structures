@@ -16,6 +16,8 @@ namespace DataStructures
             binaryTree.Add(11);
             binaryTree.Add(20);
             binaryTree.Add(31);
+
+            Console.WriteLine(binaryTree.Root);
         }
     }
 }

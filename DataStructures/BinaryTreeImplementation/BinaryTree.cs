@@ -7,6 +7,8 @@ namespace BinaryTreeImplementation
     {
         private Node<T> _root;
 
+        public T Root => this._root.Value;
+
         public bool Add(T newItem)
         {
             var current = this._root;
