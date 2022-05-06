@@ -1,6 +1,6 @@
-﻿using System;
+﻿using BinarySearchTreeImplementation;
+using System;
 using System.Collections.Generic;
-using BinaryTreeImplementation;
 
 namespace DataStructures
 {

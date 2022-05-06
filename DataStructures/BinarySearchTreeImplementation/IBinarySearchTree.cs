@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BinaryTreeImplementation
+namespace BinarySearchTreeImplementation
 {
     public interface IBinarySearchTree<T>
     {

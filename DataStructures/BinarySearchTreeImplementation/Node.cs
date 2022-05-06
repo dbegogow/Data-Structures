@@ -1,4 +1,4 @@
-﻿namespace BinaryTreeImplementation
+﻿namespace BinarySearchTreeImplementation
 {
     public class Node<T>
     {
