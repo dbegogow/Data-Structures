@@ -57,7 +57,37 @@ namespace BinaryTreeImplementation
 
         public IEnumerable<T> InOrder()
         {
-            throw new System.NotImplementedException();
+            var items = new List<T>();
+
+            this.InOrder(this._root, items);
+
+            return items;
+        }
+
+        private void InOrder(Node<T> current, List<T> items)
+        {
+            if (current.Left == null)
+            {
+                items.Add(current.Value);
+
+                if (current.Right != null)
+                {
+                    this.InOrder(current.Right, items);
+                }
+
+                return;
+            }
+
+            this.InOrder(current.Left, items);
+
+            items.Add(current.Value);
+
+            if (current.Right == null)
+            {
+                return;
+            }
+
+            this.InOrder(current.Right, items);
         }
     }
 }
