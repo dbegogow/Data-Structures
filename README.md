@@ -1,2 +1,2 @@
-# Data-Structures-Custom-Implementation
-Custom Implementation of the most popular Data Structures
+# Data Structures Playground
+Implementations of the most popular Data Structures
