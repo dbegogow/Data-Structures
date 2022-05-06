@@ -64,6 +64,15 @@ namespace BinaryTreeImplementation
             return items;
         }
 
+        public IEnumerable<T> PreOrder()
+        {
+            var items = new List<T>();
+
+            this.PreOrder(this._root, items);
+
+            return items;
+        }
+
         private void InOrder(Node<T> current, List<T> items)
         {
             if (current != null)
@@ -71,6 +80,16 @@ namespace BinaryTreeImplementation
                 this.InOrder(current.Left, items);
                 items.Add(current.Value);
                 this.InOrder(current.Right, items);
+            }
+        }
+
+        private void PreOrder(Node<T> current, List<T> items)
+        {
+            if (current != null)
+            {
+                items.Add(current.Value);
+                this.PreOrder(current.Left, items);
+                this.PreOrder(current.Right, items);
             }
         }
     }

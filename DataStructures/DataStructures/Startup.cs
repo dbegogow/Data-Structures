@@ -10,22 +10,16 @@ namespace DataStructures
         {
             var binaryTree = new BinaryTree<int>();
 
-            binaryTree.Add(10);
-            binaryTree.Add(8);
-            binaryTree.Add(7);
             binaryTree.Add(17);
-            binaryTree.Add(30);
-            binaryTree.Add(21);
-            binaryTree.Add(18);
-            binaryTree.Add(28);
-            binaryTree.Add(15);
+            binaryTree.Add(9);
+            binaryTree.Add(3);
+            binaryTree.Add(11);
+            binaryTree.Add(25);
+            binaryTree.Add(20);
             binaryTree.Add(31);
 
-            var list = new List<int> { 10, 8, 7, 17, 30, 21, 18, 28, 15, 31 };
-            list.Sort();
-
             Console.WriteLine(string.Join(", ", binaryTree.InOrder()));
-            Console.WriteLine(string.Join(", ", list));
+            Console.WriteLine(string.Join(", ", binaryTree.PreOrder()));
         }
     }
 }

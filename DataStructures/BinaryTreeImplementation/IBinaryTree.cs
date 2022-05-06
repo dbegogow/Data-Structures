@@ -7,5 +7,7 @@ namespace BinaryTreeImplementation
         bool Add(T item);
 
         IEnumerable<T> InOrder();
+
+        IEnumerable<T> PreOrder();
     }
 }
