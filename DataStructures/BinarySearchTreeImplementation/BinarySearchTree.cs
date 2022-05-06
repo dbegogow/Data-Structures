@@ -13,13 +13,13 @@ namespace BinarySearchTreeImplementation
         {
             var current = this._root;
 
+            var newItemNode = new Node<T>(newItem);
+
             if (current == null)
             {
-                this._root = new Node<T>(newItem);
+                this._root = newItemNode;
                 return true;
             }
-
-            var newItemNode = new Node<T>(newItem);
 
             while (current != null)
             {
