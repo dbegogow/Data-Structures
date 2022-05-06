@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BinaryTreeImplementation\BinaryTreeImplementation.csproj" />
+    <ProjectReference Include="..\BinaryTreeImplementation\BinarySearchTreeImplementation.csproj" />
     <ProjectReference Include="..\LinkedListImplementation\LinkedListImplementation.csproj" />
     <ProjectReference Include="..\ListImplementation\ListImplementation.csproj" />
     <ProjectReference Include="..\QueueImplementation\QueueImplementation.csproj" />

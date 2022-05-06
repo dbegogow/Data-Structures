@@ -15,7 +15,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QueueImplementation", "Queu
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeImplementation", "TreeImplementation\TreeImplementation.csproj", "{6C4CF338-0EAC-4001-BCA4-B7165EDA710B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinaryTreeImplementation", "BinaryTreeImplementation\BinaryTreeImplementation.csproj", "{C42DEC50-CC23-49A7-9320-F75AEDED54FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearchTreeImplementation", "BinarySearchTreeImplementation\BinarySearchTreeImplementation.csproj", "{C42DEC50-CC23-49A7-9320-F75AEDED54FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

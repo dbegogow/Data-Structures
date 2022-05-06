@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BinaryTreeImplementation
 {
-    public class BinaryTree<T> : IBinaryTree<T> where T : IComparable<T>
+    public class BinarySearchTree<T> : IBinarySearchTree<T> where T : IComparable<T>
     {
         private Node<T> _root;
 

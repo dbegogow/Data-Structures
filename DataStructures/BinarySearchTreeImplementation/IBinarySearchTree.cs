@@ -2,7 +2,7 @@
 
 namespace BinaryTreeImplementation
 {
-    public interface IBinaryTree<T>
+    public interface IBinarySearchTree<T>
     {
         bool Add(T item);
 
