@@ -1,2 +1,2 @@
-# Data Structures Implementation
-Implementation of the most popular Data Structures
+# Data Structures Implementations
+Implementations of the most popular Data Structures
