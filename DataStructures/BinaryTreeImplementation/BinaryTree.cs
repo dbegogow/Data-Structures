@@ -66,28 +66,12 @@ namespace BinaryTreeImplementation
 
         private void InOrder(Node<T> current, List<T> items)
         {
-            if (current.Left == null)
+            if (current != null)
             {
+                this.InOrder(current.Left, items);
                 items.Add(current.Value);
-
-                if (current.Right != null)
-                {
-                    this.InOrder(current.Right, items);
-                }
-
-                return;
+                this.InOrder(current.Right, items);
             }
-
-            this.InOrder(current.Left, items);
-
-            items.Add(current.Value);
-
-            if (current.Right == null)
-            {
-                return;
-            }
-
-            this.InOrder(current.Right, items);
         }
     }
 }

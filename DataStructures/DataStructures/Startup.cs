@@ -19,8 +19,9 @@ namespace DataStructures
             binaryTree.Add(18);
             binaryTree.Add(28);
             binaryTree.Add(15);
+            binaryTree.Add(31);
 
-            var list = new List<int> { 10, 8, 7, 17, 30, 21, 18, 28, 15 };
+            var list = new List<int> { 10, 8, 7, 17, 30, 21, 18, 28, 15, 31 };
             list.Sort();
 
             Console.WriteLine(string.Join(", ", binaryTree.InOrder()));
