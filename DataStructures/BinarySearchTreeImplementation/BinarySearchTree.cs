@@ -55,6 +55,38 @@ namespace BinarySearchTreeImplementation
             return true;
         }
 
+        public bool Remove(T item)
+        {
+            var current = this._root;
+
+
+        }
+
+        public bool Contains(T item)
+        {
+            var current = this._root;
+
+            while (current != null)
+            {
+                var compareResult = current.Value.CompareTo(item);
+
+                if (compareResult < 0)
+                {
+                    current = current.Right;
+                }
+                else if (compareResult > 0)
+                {
+                    current = current.Left;
+                }
+                else
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
         public IEnumerable<T> InOrder()
         {
             var items = new List<T>();

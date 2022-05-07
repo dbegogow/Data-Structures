@@ -1,25 +1,25 @@
 ﻿using BinarySearchTreeImplementation;
 using System;
-using System.Collections.Generic;
 
 namespace DataStructures
 {
     public class StartUp
     {
+        public static object StopWatch { get; private set; }
+
         public static void Main()
         {
             var binaryTree = new BinarySearchTree<int>();
 
-            binaryTree.Add(17);
-            binaryTree.Add(9);
-            binaryTree.Add(3);
-            binaryTree.Add(11);
-            binaryTree.Add(25);
-            binaryTree.Add(20);
-            binaryTree.Add(31);
+            var rnd = new Random();
 
-            Console.WriteLine(string.Join(", ", binaryTree.InOrder()));
-            Console.WriteLine(string.Join(", ", binaryTree.PreOrder()));
+            for (int i = 0; i < 10_000; i++)
+            {
+                var number = rnd.Next(0, 500_000);
+
+                binaryTree.Add(number);
+            }
+
         }
     }
 }
