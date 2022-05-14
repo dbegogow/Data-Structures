@@ -24,7 +24,8 @@
 
         public T Peek()
         {
-            throw new NotImplementedException();
+            this.EnsureNotEmpty();
+            return this._items[0];
         }
 
         private void HeapifyUp()
@@ -52,6 +53,14 @@
             var prop = this._items[firstIndex];
             this._items[firstIndex] = this._items[secondIndex];
             this._items[secondIndex] = prop;
+        }
+
+        private void EnsureNotEmpty()
+        {
+            if (this.Size == 0)
+            {
+                throw new InvalidOperationException("Empty priority queue");
+            }
         }
     }
 }
