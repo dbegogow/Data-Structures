@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeImplementation", "TreeI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearchTreeImplementation", "BinarySearchTreeImplementation\BinarySearchTreeImplementation.csproj", "{C42DEC50-CC23-49A7-9320-F75AEDED54FC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriorityQueueImplementation", "PriorityQueueImplementation\PriorityQueueImplementation.csproj", "{2AFF2375-DDFB-484D-80DD-031AD83946A7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{C42DEC50-CC23-49A7-9320-F75AEDED54FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C42DEC50-CC23-49A7-9320-F75AEDED54FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C42DEC50-CC23-49A7-9320-F75AEDED54FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AFF2375-DDFB-484D-80DD-031AD83946A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AFF2375-DDFB-484D-80DD-031AD83946A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AFF2375-DDFB-484D-80DD-031AD83946A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AFF2375-DDFB-484D-80DD-031AD83946A7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

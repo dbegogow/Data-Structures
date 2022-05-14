@@ -10,6 +10,7 @@
     <ProjectReference Include="..\BinaryTreeImplementation\BinarySearchTreeImplementation.csproj" />
     <ProjectReference Include="..\LinkedListImplementation\LinkedListImplementation.csproj" />
     <ProjectReference Include="..\ListImplementation\ListImplementation.csproj" />
+    <ProjectReference Include="..\PriorityQueueImplementation\PriorityQueueImplementation.csproj" />
     <ProjectReference Include="..\QueueImplementation\QueueImplementation.csproj" />
     <ProjectReference Include="..\StackImplementation\StackImplementation.csproj" />
     <ProjectReference Include="..\TreeImplementation\TreeImplementation.csproj" />

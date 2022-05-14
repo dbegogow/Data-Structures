@@ -1,11 +1,13 @@
 ﻿namespace PriorityQueueImplementation
 {
-    public interface IPriorityQueue<T>
+    public interface IPriorityQueue<T> where T : IComparable<T>
     {
+        int Size { get; }
+
         void Insert(T element);
 
-        T Pull();
-
         T Peek();
+
+        T Dequeue();
     }
 }
