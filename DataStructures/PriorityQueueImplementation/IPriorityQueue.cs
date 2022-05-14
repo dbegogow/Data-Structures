@@ -4,7 +4,7 @@
     {
         int Size { get; }
 
-        void Insert(T element);
+        void Insert(T item);
 
         T Peek();
 
