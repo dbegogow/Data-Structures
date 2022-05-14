@@ -11,15 +11,18 @@ namespace DataStructures
         {
             var binaryTree = new BinarySearchTree<int>();
 
-            var rnd = new Random();
+            binaryTree.Add(17);
+            binaryTree.Add(9);
+            binaryTree.Add(6);
+            binaryTree.Add(19);
+            binaryTree.Add(18);
+            binaryTree.Add(25);
+            binaryTree.Add(23);
+            binaryTree.Add(27);
 
-            for (int i = 0; i < 10_000; i++)
-            {
-                var number = rnd.Next(0, 500_000);
+            Console.WriteLine(binaryTree.Remove(17));
 
-                binaryTree.Add(number);
-            }
-
+            ;
         }
     }
 }

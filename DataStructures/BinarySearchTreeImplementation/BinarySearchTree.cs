@@ -57,9 +57,103 @@ namespace BinarySearchTreeImplementation
 
         public bool Remove(T item)
         {
+            if (item == null)
+            {
+                return false;
+            }
+
             var current = this._root;
+            var before = current;
 
+            // 'n' - has no direction (root element), 'l' = left, 'r' = right
+            var lastDirection = 'n';
 
+            while (current != null)
+            {
+                var compareResult = current.Value.CompareTo(item);
+
+                if (compareResult == 0)
+                {
+                    if (current.Right == null)
+                    {
+                        if (lastDirection == 'l')
+                        {
+                            before.Left = current.Left;
+                        }
+                        else if (lastDirection == 'r')
+                        {
+                            before.Right = current.Left;
+                        }
+                        else
+                        {
+                            this._root = current.Left;
+                        }
+                    }
+                    else if (current.Right.Left == null)
+                    {
+                        current.Right.Left = current.Left;
+
+                        if (lastDirection == 'l')
+                        {
+                            before.Left = current.Right;
+                        }
+                        else if (lastDirection == 'r')
+                        {
+                            before.Right = current.Right;
+                        }
+                        else
+                        {
+                            this._root = current.Right;
+                        }
+                    }
+                    else
+                    {
+                        var min = current.Right.Left;
+                        var minbefore = current.Right;
+
+                        while (min.Left != null)
+                        {
+                            minbefore = min;
+                            min = min.Left;
+                        }
+
+                        min.Left = current.Left;
+                        min.Right = current.Right;
+
+                        minbefore.Left = null;
+
+                        if (lastDirection == 'l')
+                        {
+                            before.Left = min;
+                        }
+                        else if (lastDirection == 'r')
+                        {
+                            before.Right = min;
+                        }
+                        else
+                        {
+                            this._root = min;
+                        }
+                    }
+
+                    break;
+                }
+
+                before = current;
+
+                if (compareResult < 0)
+                {
+                    current = current.Right;
+                    lastDirection = 'r';
+                }
+                else if (compareResult > 0)
+                {
+                    current = current.Left;
+                    lastDirection = 'l';
+                }
+            }
+
+            return false;
         }
 
         public bool Contains(T item)
