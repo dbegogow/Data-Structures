@@ -1,28 +1,21 @@
-﻿using BinarySearchTreeImplementation;
+﻿using PriorityQueueImplementation;
 using System;
 
 namespace DataStructures
 {
     public class StartUp
     {
-        public static object StopWatch { get; private set; }
-
         public static void Main()
         {
-            var binaryTree = new BinarySearchTree<int>();
+            var priorityQueue = new PriorityQueue<int>();
 
-            binaryTree.Add(17);
-            binaryTree.Add(9);
-            binaryTree.Add(6);
-            binaryTree.Add(19);
-            binaryTree.Add(18);
-            binaryTree.Add(25);
-            binaryTree.Add(23);
-            binaryTree.Add(27);
+            priorityQueue.Insert(3);
+            priorityQueue.Insert(1);
+            priorityQueue.Insert(2);
+            priorityQueue.Insert(5);
 
-            Console.WriteLine(binaryTree.Remove(17));
-
-            ;
+            Console.WriteLine(priorityQueue.Dequeue());
+            Console.WriteLine(priorityQueue.Dequeue());
         }
     }
 }
