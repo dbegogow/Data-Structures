@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataStructures", "DataStructures\DataStructures.csproj", "{6FA55A05-B49B-48E3-8090-463D0DD19B0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TryDataStructures", "TryDataStructures\TryDataStructures.csproj", "{6FA55A05-B49B-48E3-8090-463D0DD19B0F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ListImplementation", "ListImplementation\ListImplementation.csproj", "{39F544EB-7485-4F5A-A6E6-EECCD3098215}"
 EndProject
@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeImplementation", "TreeI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BinarySearchTreeImplementation", "BinarySearchTreeImplementation\BinarySearchTreeImplementation.csproj", "{C42DEC50-CC23-49A7-9320-F75AEDED54FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriorityQueueImplementation", "PriorityQueueImplementation\PriorityQueueImplementation.csproj", "{2AFF2375-DDFB-484D-80DD-031AD83946A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PriorityQueueImplementation", "PriorityQueueImplementation\PriorityQueueImplementation.csproj", "{2AFF2375-DDFB-484D-80DD-031AD83946A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
 ﻿using PriorityQueueImplementation;
 using System;
 
-namespace DataStructures
+namespace TryDataStructures
 {
     public class StartUp
     {
