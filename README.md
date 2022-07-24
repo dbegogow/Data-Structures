@@ -1,7 +1,6 @@
 # Data Structures Playground
-Implementations of the most popular Data Structures
+Implementations of the most popular Data Structures 🛠️🌳
 
-🛠️🌳
 - Tree
 - BinarySearchTree
 - AVLTree
