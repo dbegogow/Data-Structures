@@ -8,7 +8,7 @@
             this.Height = 1;
         }
 
-        public T Value { get; }
+        public T Value { get; set; }
 
         public Node<T> Left { get; set; }
 

@@ -20,7 +20,9 @@ namespace TryDataStructures
             avlTree.Insert(3);
             avlTree.Insert(50);
 
-            Console.WriteLine(avlTree.Contains(20));
+            avlTree.Delete(34);
+
+            Console.WriteLine(avlTree.Contains(28));
         }
     }
 }

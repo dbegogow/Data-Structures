@@ -15,7 +15,110 @@
 
         public void Delete(T item)
         {
-            throw new NotImplementedException();
+            if (this.Contains(item))
+            {
+                this._root = this.Remove(this._root, item);
+
+                this.UpdateHeight(this._root);
+            }
+        }
+
+        private Node<T> Remove(Node<T> node, T item)
+        {
+            if (node == null)
+            {
+                return null;
+            }
+
+            int cmp = item.CompareTo(node.Value);
+            if (cmp < 0)
+            {
+                node.Left = this.Remove(node.Left, item);
+
+                this.UpdateHeight(node);
+            }
+            else if (cmp > 0)
+            {
+                node.Right = this.Remove(node.Right, item);
+
+                this.UpdateHeight(node);
+            }
+
+            if (cmp == 0)
+            {
+                if (node.Left == null
+                    && node.Right == null)
+                {
+                    return null;
+                }
+
+                if (node.Left != null
+                    && node.Right == null)
+                {
+                    return node.Left;
+                }
+
+                if (node.Left == null
+                    && node.Right != null)
+                {
+                    return node.Right;
+                }
+
+                if (node.Left.Height > node.Right.Height)
+                {
+                    var replacement = this.Greatest(node.Left);
+                    node.Value = replacement.Value;
+                    node.Left = this.Remove(node.Left, replacement.Value);
+
+                    this.UpdateHeight(node.Left);
+                    this.UpdateHeight(node);
+                }
+                else
+                {
+                    var replacement = this.Smallest(node.Right);
+                    node.Value = replacement.Value;
+                    node.Right = this.Remove(node.Right, replacement.Value);
+
+                    this.UpdateHeight(node.Right);
+                    this.UpdateHeight(node);
+                }
+            }
+
+            return this.Balance(node);
+        }
+
+        private Node<T> Smallest(Node<T> node)
+        {
+            if (node == null)
+            {
+                return null;
+            }
+
+            if (node.Left != null)
+            {
+                return this.Smallest(node.Left);
+            }
+            else
+            {
+                return node;
+            }
+        }
+
+        private Node<T> Greatest(Node<T> node)
+        {
+            if (node == null)
+            {
+                return null;
+            }
+
+            if (node.Right != null)
+            {
+                return this.Greatest(node.Right);
+            }
+            else
+            {
+                return node;
+            }
         }
 
         private Node<T> Insert(Node<T> node, T item)
