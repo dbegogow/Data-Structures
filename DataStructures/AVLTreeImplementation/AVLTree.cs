@@ -6,7 +6,8 @@
 
         public bool Contains(T item)
         {
-            throw new NotImplementedException();
+            var node = this.Search(this._root, item);
+            return node != null;
         }
 
         public void Insert(T item)
@@ -108,6 +109,26 @@
             }
 
             return node.Height;
+        }
+
+        private Node<T> Search(Node<T> node, T item)
+        {
+            if (node == null)
+            {
+                return null;
+            }
+
+            var cmp = item.CompareTo(node.Value);
+            if (cmp < 0)
+            {
+                return this.Search(node.Left, item);
+            }
+            else if (cmp > 0)
+            {
+                return this.Search(node.Right, item);
+            }
+
+            return node;
         }
     }
 }

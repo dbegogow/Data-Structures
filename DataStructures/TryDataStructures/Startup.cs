@@ -1,4 +1,5 @@
-﻿using AVLTreeImplementation;
+﻿using System;
+using AVLTreeImplementation;
 
 namespace TryDataStructures
 {
@@ -18,6 +19,8 @@ namespace TryDataStructures
             avlTree.Insert(45);
             avlTree.Insert(3);
             avlTree.Insert(50);
+
+            Console.WriteLine(avlTree.Contains(20));
         }
     }
 }
