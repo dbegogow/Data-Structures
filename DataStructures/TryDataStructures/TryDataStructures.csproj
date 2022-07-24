@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\AVLTreeImplementation\AVLTreeImplementation.csproj" />
     <ProjectReference Include="..\BinarySearchTreeImplementation\BinarySearchTreeImplementation.csproj" />
     <ProjectReference Include="..\LinkedListImplementation\LinkedListImplementation.csproj" />
     <ProjectReference Include="..\ListImplementation\ListImplementation.csproj" />

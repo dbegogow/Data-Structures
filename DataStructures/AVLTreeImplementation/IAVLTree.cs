@@ -6,8 +6,6 @@
 
         void Insert(T item);
 
-        void EachInOrder(Action<T> action);
-
-        Node<T> Insert(Node<T> node, T value);
+        void Delete(T item);
     }
 }

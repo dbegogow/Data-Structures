@@ -1,5 +1,4 @@
-﻿using PriorityQueueImplementation;
-using System;
+﻿using AVLTreeImplementation;
 
 namespace TryDataStructures
 {
@@ -7,15 +6,18 @@ namespace TryDataStructures
     {
         public static void Main()
         {
-            var priorityQueue = new PriorityQueue<int>();
+            var avlTree = new AVLTree<int>();
 
-            priorityQueue.Insert(3);
-            priorityQueue.Insert(1);
-            priorityQueue.Insert(2);
-            priorityQueue.Insert(5);
+            avlTree.Insert(10);
+            avlTree.Insert(9);
+            avlTree.Insert(8);
+            avlTree.Insert(40);
+            avlTree.Insert(50);
+            avlTree.Insert(60);
+            avlTree.Insert(70);
+            avlTree.Insert(80);
 
-            Console.WriteLine(priorityQueue.Dequeue());
-            Console.WriteLine(priorityQueue.Dequeue());
+            ;
         }
     }
 }
